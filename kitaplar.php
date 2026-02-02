@@ -36,11 +36,36 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
     align-items: center;
-    padding: 20px 40px;
-    border-bottom: 1px solid #222;
 }
+
+header a {
+    position: relative;
+    padding-bottom: 6px;
+    font-size: 15px;
+}
+
+/* Ayırıcı çizgi */
+header a:not(:last-child)::after {
+    content: '|';
+    position: absolute;
+    right: -10px;
+    opacity: .4;
+}
+
+/* Aktif sayfa */
+header a.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+}
+
 
 .nav {
     display: flex;
@@ -117,6 +142,7 @@ header {
 
 </style>
 </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <body>
 
 <header>

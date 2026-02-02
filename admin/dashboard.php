@@ -43,6 +43,7 @@ require_once __DIR__ . '/../config/auth.php';
             background: #444;
         }
     </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 

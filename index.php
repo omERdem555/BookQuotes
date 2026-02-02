@@ -40,11 +40,36 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
     align-items: center;
-    padding: 20px 40px;
-    border-bottom: 1px solid #222;
 }
+
+header a {
+    position: relative;
+    padding-bottom: 6px;
+    font-size: 15px;
+}
+
+/* Ayırıcı çizgi */
+header a:not(:last-child)::after {
+    content: '|';
+    position: absolute;
+    right: -10px;
+    opacity: .4;
+}
+
+/* Aktif sayfa */
+header a.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+}
+
 
 .nav {
     display: flex;
@@ -75,21 +100,30 @@ header {
 .divider { width:1px; height:14px; background:#444; }
 
 .container {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 40px auto;
-    padding: 0 20px;
+    padding: 0 16px;
 }
 
 .quote {
     display: flex;
     gap: 20px;
     background: #1b1b1b;
-    padding: 20px;
-    margin-bottom: 30px;
+    padding: 24px;
+    margin-bottom: 24px;
     border-left: 3px solid #ffcc00;
-    border-radius: 4px;
+    border-radius: 6px;
     align-items: flex-start;
+    line-height: 1.6;
 }
+
+@media (max-width: 768px) {
+    .quote {
+        padding: 18px;
+        font-size: 15px;
+    }
+}
+
 
 .quote img {
     width: 60px;
@@ -125,6 +159,7 @@ header {
     margin-right: 12px;
 }
 </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 

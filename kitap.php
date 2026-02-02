@@ -59,11 +59,36 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
     align-items: center;
-    padding: 20px 40px;
-    border-bottom: 1px solid #222;
 }
+
+header a {
+    position: relative;
+    padding-bottom: 6px;
+    font-size: 15px;
+}
+
+/* Ayırıcı çizgi */
+header a:not(:last-child)::after {
+    content: '|';
+    position: absolute;
+    right: -10px;
+    opacity: .4;
+}
+
+/* Aktif sayfa */
+header a.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+}
+
 
 header a {
     color: #fff;
@@ -139,6 +164,35 @@ header a:hover {
     display: block;
 }
 
+
+/* Mobil */
+@media (max-width: 768px) {
+    .book-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .book-image,
+    .author-image {
+        text-align: center;
+    }
+
+    .book-image img,
+    .author-image img {
+        max-width: 160px;
+    }
+}
+
+body {
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+}
+
+
 /* Alıntılar scroll değil, her alıntı kendi kutusu içinde alt alta */
 .quotes-area {
     display: flex;
@@ -171,6 +225,7 @@ header a:hover {
     margin-right: 12px;
 }
 </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 

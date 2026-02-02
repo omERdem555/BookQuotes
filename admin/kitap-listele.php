@@ -30,6 +30,7 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
         th, td { padding: 8px; border: 1px solid #ccc; }
         th { background: #eee; }
     </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
